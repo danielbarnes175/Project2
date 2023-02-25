@@ -1,12 +1,13 @@
-﻿using Project1.src.Engine.Simulation.World;
-using Project1.src.Engine;
-using Project1.src.UI;
+﻿using Project2.src.Engine.Simulation.World;
+using Project2.src.Engine;
+using Project2.src.UI;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Project2.src.Engine.Simulation;
 
-namespace Project1.src.engine
+namespace Project2.src.Engine
 {
     class GameManager
     {
@@ -23,11 +24,13 @@ namespace Project1.src.engine
         {
             GameCamera.UpdateCamera(GlobalParameters.GlobalGraphics.Viewport);
             world.Update();
+            GameSettings.player.Update();
         }
 
-        public void Draw(Vector2 OFFSET)
+        public void Draw(Vector2 offset)
         {
             world.Draw();
+            GameSettings.player.Draw(offset);
         }
     }
 }

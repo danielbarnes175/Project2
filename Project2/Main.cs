@@ -1,23 +1,23 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Project1;
-using Project1.src.Engine;
+using Project2;
+using Project2.src.Engine;
 using System.Collections.Generic;
 using System;
-using Project1.src.Engine.Scene.Scenes;
-using Project1.src.engine.controllers;
-using Project1.src.UI;
+using Project2.src.UI;
+using Project2.src.Engine.Input;
+using Project2.src.Engine.Scene.Scenes;
 
 using var game = new Main();
 game.Run();
 
-namespace Project1
+namespace Project2
 {
     public class Main : Game
     {
         private GraphicsDeviceManager graphics;
-        private BasicTexture cursor;
+        private BaseTexture cursor;
 
         public Main()
         {
@@ -39,7 +39,8 @@ namespace Project1
             GlobalParameters.Scenes = new Dictionary<string, BaseScene>
             {
                 { "Menu Scene", new MenuScene() },
-                { "Game Scene", new GameScene() }
+                { "Game Scene", new GameScene() },
+                { "Lobby Scene", new LobbyScene() }
             };
 
             GlobalParameters.CurrentScene = GlobalParameters.Scenes["Menu Scene"];
@@ -59,7 +60,7 @@ namespace Project1
 
             GlobalParameters.font = Content.Load<SpriteFont>("Assets\\Fonts/Arial");
             GlobalParameters.smallFont = Content.Load<SpriteFont>("Assets\\Fonts/Arial");
-            cursor = new BasicTexture("Assets\\cursor", new Vector2(0, 0), new Vector2(28, 28));
+            cursor = new BaseTexture("Assets\\cursor", new Vector2(0, 0), new Vector2(28, 28));
 
             foreach (KeyValuePair<string, BaseScene> scene in GlobalParameters.Scenes)
             {

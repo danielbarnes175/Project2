@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Project1.src.Engine.Scene.Scenes
+namespace Project2.src.Engine.Scene.Scenes
 {
     public class BaseScene
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project1.src.Engine.Simulation.World
+namespace Project2.src.Engine.Simulation.World
 {
     public enum TerrainType
     {

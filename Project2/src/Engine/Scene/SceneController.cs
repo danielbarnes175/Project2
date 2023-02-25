@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Project1.src.engine.controllers
+namespace Project1.src.Engine.Scene
 {
     class SceneController
     {

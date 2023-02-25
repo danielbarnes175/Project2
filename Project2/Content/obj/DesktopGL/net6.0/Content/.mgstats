@@ -1,3 +1,6 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
 "C:/Users/danny/codeStuff/GameDev/Project2/Project2/Content/Assets/cursor.png","C:/Users/danny/codeStuff/GameDev/Project2/Project2/Content/bin/DesktopGL/Content/Assets/cursor.xnb","TextureProcessor","Texture2DContent",160464,551845,0.1147735
 "C:/Users/danny/codeStuff/GameDev/Project2/Project2/Content/Assets/Fonts/Arial.spritefont","C:/Users/danny/codeStuff/GameDev/Project2/Project2/Content/bin/DesktopGL/Content/Assets/Fonts/Arial.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21535,0.0784407
+"C:/Users/danny/codeStuff/GameDev/Project2/Project2/Content/Assets/Game/rogue.png","C:/Users/danny/codeStuff/GameDev/Project2/Project2/Content/bin/DesktopGL/Content/Assets/Game/rogue.xnb","TextureProcessor","Texture2DContent",312260,1018549,0.1090191
+"C:/Users/danny/codeStuff/GameDev/Project2/Project2/Content/Assets/Game/warrior.png","C:/Users/danny/codeStuff/GameDev/Project2/Project2/Content/bin/DesktopGL/Content/Assets/Game/warrior.xnb","TextureProcessor","Texture2DContent",146165,3294085,0.0569023
+"C:/Users/danny/codeStuff/GameDev/Project2/Project2/Content/Assets/Game/wizard.png","C:/Users/danny/codeStuff/GameDev/Project2/Project2/Content/bin/DesktopGL/Content/Assets/Game/wizard.xnb","TextureProcessor","Texture2DContent",58391,1036885,0.0167529

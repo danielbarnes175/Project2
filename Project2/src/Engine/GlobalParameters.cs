@@ -1,12 +1,12 @@
 ﻿using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using Project1.src.engine.controllers;
-using Project1.src.engine;
+using Project2.src.Engine;
+using Project2.src.Engine.Input;
+using Project2.src.Engine.Scene.Scenes;
 using System;
 using System.Collections.Generic;
-using Project1.src.Engine.Scene.Scenes;
 
-namespace Project1.src.Engine
+namespace Project2.src.Engine
 {
     class GlobalParameters
     {

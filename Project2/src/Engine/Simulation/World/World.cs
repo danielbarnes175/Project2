@@ -1,11 +1,14 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Project1.src.Engine;
+using Project2.src.Engine;
+using Project2.src.UI;
+using Project2.src.Engine.Simulation.Character;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
-namespace Project1.src.Engine.Simulation.World
+namespace Project2.src.Engine.Simulation.World
 {
     public class World
     {
@@ -14,7 +17,9 @@ namespace Project1.src.Engine.Simulation.World
 
         public readonly int TILE_HEIGHT;
         public readonly int TILE_WIDTH;
+
         private TerrainType[,] map;
+        private List<BaseTexture> textures;
 
         public World(int width, int height)
         {
@@ -26,11 +31,16 @@ namespace Project1.src.Engine.Simulation.World
 
             map = new TerrainType[WORLD_WIDTH, WORLD_HEIGHT];
             GenerateWorld();
+
+            textures = new List<BaseTexture>();
         }
 
         public void Update()
         {
-
+            foreach (BaseTexture texture in textures)
+            {
+                texture.Update();
+            }
         }
 
         public void Draw()
@@ -42,6 +52,11 @@ namespace Project1.src.Engine.Simulation.World
                     Vector2 position = new Vector2(i * TILE_WIDTH, j * TILE_HEIGHT);
                     GlobalParameters.GlobalSpriteBatch.DrawString(GlobalParameters.smallFont, map[i, j].ToString(), position, Color.Black, 0, Vector2.Zero, Vector2.One, SpriteEffects.None, 0.9f);
                 }
+            }
+
+            foreach (BaseTexture texture in textures)
+            {
+                texture.Draw(Vector2.Zero);
             }
         }
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RTSGame.src.Engine.Input.Keyboard
+namespace Project2.src.Engine.Input.Keyboard
 {
     class KeyboardKeys
     {

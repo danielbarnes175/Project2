@@ -1,12 +1,12 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
-using Project1.src.Engine;
+using Project2.src.Engine;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Project1.src.Engine.Simulation.World
+namespace Project2.src.Engine.Simulation.World
 {
     public class Camera
     {

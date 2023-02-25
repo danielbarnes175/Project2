@@ -1,19 +1,19 @@
 ﻿using Microsoft.Xna.Framework;
-using Project1.src.engine;
-using Project1.src.UI;
+using Project2.src.Engine;
+using Project2.src.UI;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Project1.src.Engine.Scene.Scenes
+namespace Project2.src.Engine.Scene.Scenes
 {
     public class GameScene : BaseScene
     {
-            private List<BasicTexture> _textures;
+            private List<BaseTexture> _textures;
 
             public GameScene()
             {
-                _textures = new List<BasicTexture>();
+                _textures = new List<BaseTexture>();
             }
 
             public override void LoadContent()
@@ -33,7 +33,7 @@ namespace Project1.src.Engine.Scene.Scenes
             public override void Draw(Vector2 offset)
             {
                 GlobalParameters.Game.Draw(offset);
-                foreach (BasicTexture texture in _textures)
+                foreach (BaseTexture texture in _textures)
                 {
                     texture.Draw(offset);
                 }
