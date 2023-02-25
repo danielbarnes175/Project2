@@ -1,4 +1,4 @@
-# Project Directory
+# Project Structure (WIP)
 
 ## Content
 
