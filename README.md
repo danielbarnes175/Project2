@@ -2,7 +2,7 @@
 
 Welcome to the world of Pokemon!
 
-This is a small developmental experiment of a "game" by a gang of jokers.
+This is a small developmental experiment of a "game" by a gang of jokers, it is mostly being done as a learning project.
 
 WORKING TITLE: Project 1
 
