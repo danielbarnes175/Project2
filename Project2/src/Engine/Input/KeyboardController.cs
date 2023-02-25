@@ -97,6 +97,12 @@ namespace Project2.src.Engine.Input
                     return Keys.Escape;
                 case "SPACEBAR":
                     return Keys.Space;
+                case "SHIFT":
+                    return Keys.LeftShift;
+                case "LEFT_SHIFT":
+                    return Keys.LeftShift;
+                case "RIGHT_SHIFT":
+                    return Keys.RightShift;
                 case "ARROW_UP":
                     return Keys.Up;
                 case "ARROW_DOWN":

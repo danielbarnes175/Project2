@@ -29,7 +29,7 @@ namespace Project2.src.Engine.Scene.Scenes
             Button startGameButton = new Button(startGameButtonTexture, new Vector2((GlobalParameters.screenWidth / 2) - 100, (float)(GlobalParameters.screenHeight * .8)), new Vector2(200, 50), () =>
             {
                 GlobalParameters.CurrentScene = GlobalParameters.Scenes["Game Scene"];
-            });
+            }, "START GAME");
 
             Button warriorButton = new Button("Assets/Game/warrior", new Vector2((float)(GlobalParameters.screenWidth * 0.2) - 150, (GlobalParameters.screenHeight / 2) - 400), new Vector2(300, 600), () =>
             {

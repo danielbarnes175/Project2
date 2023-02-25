@@ -48,6 +48,7 @@ namespace Project2.src.Engine.Scene.Scenes
 
             GlobalParameters.GlobalSpriteBatch.DrawString(GlobalParameters.font, desc, titleLoc, Color.Black);
             GlobalParameters.GlobalSpriteBatch.DrawString(GlobalParameters.font, title, descLoc, Color.Black);
+
             base.Draw(offset);
         }
     }
