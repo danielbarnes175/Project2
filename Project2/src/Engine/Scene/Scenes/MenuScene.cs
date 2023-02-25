@@ -37,8 +37,8 @@ namespace Project1.src.Engine.Scene.Scenes
                 texture.Draw(offset);
             }
 
-            String title = "RTS Game v0.1";
-            String desc = "Press any button to continue";
+            String title = "Project2 Game v0.0.1";
+            String desc = "Press [ Spacebar ] to continue";
 
             Vector2 descSize = GlobalParameters.font.MeasureString(desc);
             Vector2 titleSize = GlobalParameters.font.MeasureString(title);

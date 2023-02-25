@@ -23,13 +23,11 @@ namespace Project1
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            IsMouseVisible = true;
+            IsMouseVisible = false;
         }
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-
             GlobalParameters.screenWidth = 1600;
             GlobalParameters.screenHeight = 900;
 

@@ -48,3 +48,5 @@ C:\Users\danny\codeStuff\GameDev\Project2\Project2\obj\Debug\net6.0\refint\Proje
 C:\Users\danny\codeStuff\GameDev\Project2\Project2\obj\Debug\net6.0\Project2.pdb
 C:\Users\danny\codeStuff\GameDev\Project2\Project2\obj\Debug\net6.0\Project2.genruntimeconfig.cache
 C:\Users\danny\codeStuff\GameDev\Project2\Project2\obj\Debug\net6.0\ref\Project2.dll
+C:\Users\danny\codeStuff\GameDev\Project2\Project2\bin\Debug\net6.0\Content\Assets\cursor.xnb
+C:\Users\danny\codeStuff\GameDev\Project2\Project2\bin\Debug\net6.0\Content\Assets\Fonts\Arial.xnb
