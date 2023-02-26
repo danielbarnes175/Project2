@@ -129,7 +129,7 @@ namespace Project2.src.Engine.Simulation.World
                 cameraMovement.Y = -moveSpeed;
             }
 
-            if (GlobalParameters.GlobalKeyboard.GetPress("ARROW_DOWN") || getMouseScreenPosition().Y >= 1077)
+            if (GlobalParameters.GlobalKeyboard.GetPress("ARROW_DOWN") || getMouseScreenPosition().Y >= GlobalParameters.screenHeight)
             {
                 cameraMovement.Y = moveSpeed;
             }
@@ -139,7 +139,7 @@ namespace Project2.src.Engine.Simulation.World
                 cameraMovement.X = -moveSpeed;
             }
 
-            if (GlobalParameters.GlobalKeyboard.GetPress("ARROW_RIGHT") || getMouseScreenPosition().X >= 1917)
+            if (GlobalParameters.GlobalKeyboard.GetPress("ARROW_RIGHT") || getMouseScreenPosition().X >= GlobalParameters.screenWidth)
             {
                 cameraMovement.X = moveSpeed;
             }
