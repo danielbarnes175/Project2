@@ -24,5 +24,10 @@ namespace Project2.src.Engine.Simulation.Character
         {
             position = new Vector2(position.X + speed.X, position.Y + speed.Y);
         }
+
+        public bool isPlayerMoving()
+        {
+            return (speed.X != 0 || speed.Y != 0);
+        }
     }
 }

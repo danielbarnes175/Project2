@@ -75,10 +75,18 @@ namespace Project2.src.Engine.Simulation.World
 
         public void UpdateCamera(Viewport bounds)
         {
+            // Track the player
+            if (GameSettings.player.isPlayerMoving())
+            {
+                Position = new Vector2(GameSettings.player.position.X, GameSettings.player.position.Y);
+            }
+
+            // Make sure the camera can't be moved off the world
             if (Position.X * 2 - bounds.Width < 0)
                 Position = new Vector2(bounds.Width / 2, Position.Y);
             if (Position.Y * 2 - Bounds.Height < 0)
                 Position = new Vector2(Position.X, bounds.Height / 2);
+
             if (Position.X + bounds.Width / 2 > GlobalParameters.Game.world.TILE_WIDTH * GlobalParameters.Game.world.WORLD_WIDTH)
             {
                 Position = new Vector2(
@@ -115,6 +123,7 @@ namespace Project2.src.Engine.Simulation.World
                 moveSpeed = 10;
             }
 
+            // Handle manual camera movement
             if (GlobalParameters.GlobalKeyboard.GetPress("ARROW_UP") || getMouseScreenPosition().Y <= 3)
             {
                 cameraMovement.Y = -moveSpeed;
@@ -135,6 +144,7 @@ namespace Project2.src.Engine.Simulation.World
                 cameraMovement.X = moveSpeed;
             }
 
+            // Handle zoom
             previousMouseWheelValue = currentMouseWheelValue;
             currentMouseWheelValue = Mouse.GetState().ScrollWheelValue;
 
