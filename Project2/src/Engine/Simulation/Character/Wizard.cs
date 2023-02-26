@@ -19,7 +19,7 @@ namespace Project2.src.Engine.Simulation.Character
      */
     public class Wizard : BaseCharacter
     {
-        // bool, short for boolean, is a type of variable that can be 2 values, true, or false.
+        // int, short for integer, is a type of variable that is a number without a decimal place.
         int currentMana;
         int maxMana;
 

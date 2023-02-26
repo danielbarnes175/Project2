@@ -22,7 +22,6 @@ namespace Project2.src.Engine.Simulation.Character
 
         public override void Update()
         {
-            // TODO: Implement real physics w/ acceleration
             position = new Vector2(position.X + speed.X, position.Y + speed.Y);
         }
     }

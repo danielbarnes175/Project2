@@ -58,6 +58,27 @@ namespace Project2.src.UI
 
         public virtual void Update()
         {
+            int health = 5;
+            bool isPlayerAlive = true;
+
+            if (health < 0)
+            {
+                isPlayerAlive = false;
+            }
+            else 
+            {
+                isPlayerAlive = true;
+            }
+
+            if (isPlayerAlive)
+            {
+                updatePlayer();
+            }
+
+        }
+
+        public void updatePlayer()
+        {
 
         }
 
