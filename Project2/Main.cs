@@ -8,6 +8,7 @@ using System;
 using Project2.src.UI;
 using Project2.src.Engine.Input;
 using Project2.src.Engine.Scene.Scenes;
+using Project2.src.Engine.Simulation.Character;
 
 using var game = new Main();
 game.Run();
