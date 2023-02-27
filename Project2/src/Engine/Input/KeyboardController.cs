@@ -79,6 +79,8 @@ namespace Project2.src.Engine.Input
                     return Keys.P;
                 case "Q":
                     return Keys.Q;
+                case "R":
+                    return Keys.R;
                 case "S":
                     return Keys.S;
                 case "T":

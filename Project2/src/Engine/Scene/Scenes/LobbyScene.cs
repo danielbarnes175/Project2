@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Project2.src.Engine.Helpers;
 using Project2.src.Engine.Simulation;
 using Project2.src.Engine.Simulation.Character;
+using Project2.src.Engine.Simulation.World;
 
 namespace Project2.src.Engine.Scene.Scenes
 {
@@ -23,27 +24,37 @@ namespace Project2.src.Engine.Scene.Scenes
 
         public override void LoadContent()
         {
-            GameSettings.player = new Warrior(new Vector2(80, 100), new Vector2(80, 100));
+            GameSettings.player = new Warrior(Vector2.Zero, new Vector2(80, 100));
 
             Texture2D startGameButtonTexture = DrawingService.CreateTexture(GlobalParameters.GlobalGraphics, 200, 50, pixel => Color.Brown, Shapes.RECTANGLE);
             Button startGameButton = new Button(startGameButtonTexture, new Vector2((GlobalParameters.screenWidth / 2) - 100, (float)(GlobalParameters.screenHeight * .8)), new Vector2(200, 50), () =>
             {
+                // Setup Initial Game Variables
+                World world = GlobalParameters.Game.world;
+                Vector2 spawnLocation = world.spawnLocation;
+                Vector2 screenPosition = world.getScreenPositionFromMapPosition(spawnLocation.X, spawnLocation.Y);
+                GameSettings.player.position = screenPosition;
+
+                GlobalParameters.Game.GameCamera.SetCameraPosition(screenPosition);
+                GlobalParameters.Game.GameCamera.UpdateCamera(GlobalParameters.GlobalGraphics.Viewport);
+
+                // Change Scene to Game Scene
                 GlobalParameters.CurrentScene = GlobalParameters.Scenes["Game Scene"];
             }, "START GAME");
 
             Button warriorButton = new Button("Assets/Game/warrior", new Vector2((float)(GlobalParameters.screenWidth * 0.2) - 150, (GlobalParameters.screenHeight / 2) - 400), new Vector2(300, 600), () =>
             {
-                GameSettings.player = new Warrior(new Vector2(80, 100), new Vector2(80, 100));
+                GameSettings.player = new Warrior(Vector2.Zero, new Vector2(80, 100));
             });
 
             Button rogueButton = new Button("Assets/Game/rogue", new Vector2((float)(GlobalParameters.screenWidth * 0.5) - 150, (GlobalParameters.screenHeight / 2) - 400), new Vector2(300, 600), () =>
             {
-                GameSettings.player = new Rogue(new Vector2(80, 100), new Vector2(80, 100));
+                GameSettings.player = new Rogue(Vector2.Zero, new Vector2(80, 100));
             });
 
             Button wizardButton = new Button("Assets/Game/wizard", new Vector2((float)(GlobalParameters.screenWidth * 0.8) - 150, (GlobalParameters.screenHeight / 2) - 400), new Vector2(300, 600), () =>
             {
-                GameSettings.player = new Wizard(new Vector2(80, 100), new Vector2(80, 100));
+                GameSettings.player = new Wizard(Vector2.Zero, new Vector2(80, 100));
             });
 
             _textures.Add(startGameButton);

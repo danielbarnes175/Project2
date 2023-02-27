@@ -37,6 +37,11 @@ namespace Project2.src.Engine.Helpers
             return false;
         }
 
+        public static bool CheckRectangleCollision(Rectangle rect1, Rectangle rect2)
+        {
+            return (!rect1.Intersects(rect2));
+        }
+
         /**
          * Helper function to check if a mouse if hovering over a given texture. Returns true if they collide, otherwise false.
          */
