@@ -4,11 +4,11 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/danny/codeStuff/GameDev/Project2/Project2/Content/Assets/cursor.png</File>
-    <File>C:/Users/danny/codeStuff/GameDev/Project2/Project2/Content/Assets/Fonts/Arial.spritefont</File>
-    <File>C:/Users/danny/codeStuff/GameDev/Project2/Project2/Content/Assets/Game/rogue.png</File>
-    <File>C:/Users/danny/codeStuff/GameDev/Project2/Project2/Content/Assets/Game/warrior.png</File>
-    <File>C:/Users/danny/codeStuff/GameDev/Project2/Project2/Content/Assets/Game/wizard.png</File>
+    <File>C:/Users/bfrom/Project2/Project2/Content/Assets/cursor.png</File>
+    <File>C:/Users/bfrom/Project2/Project2/Content/Assets/Fonts/Arial.spritefont</File>
+    <File>C:/Users/bfrom/Project2/Project2/Content/Assets/Game/rogue.png</File>
+    <File>C:/Users/bfrom/Project2/Project2/Content/Assets/Game/warrior.png</File>
+    <File>C:/Users/bfrom/Project2/Project2/Content/Assets/Game/wizard.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

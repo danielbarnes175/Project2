@@ -1,14 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Project2.src.UI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Project2.src.Engine.Helpers;
 using Project2.src.Engine.Simulation;
 using Project2.src.Engine.Simulation.Character;
+using Project2.src.UI;
+using System.Collections.Generic;
 
 namespace Project2.src.Engine.Scene.Scenes
 {

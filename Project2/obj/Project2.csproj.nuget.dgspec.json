@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\danny\\codeStuff\\GameDev\\Project2\\Project2\\Project2.csproj": {}
+    "C:\\Users\\bfrom\\Project2\\Project2\\Project2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\danny\\codeStuff\\GameDev\\Project2\\Project2\\Project2.csproj": {
+    "C:\\Users\\bfrom\\Project2\\Project2\\Project2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\danny\\codeStuff\\GameDev\\Project2\\Project2\\Project2.csproj",
+        "projectUniqueName": "C:\\Users\\bfrom\\Project2\\Project2\\Project2.csproj",
         "projectName": "Project2",
-        "projectPath": "C:\\Users\\danny\\codeStuff\\GameDev\\Project2\\Project2\\Project2.csproj",
-        "packagesPath": "C:\\Users\\danny\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\danny\\codeStuff\\GameDev\\Project2\\Project2\\obj\\",
+        "projectPath": "C:\\Users\\bfrom\\Project2\\Project2\\Project2.csproj",
+        "packagesPath": "C:\\Users\\bfrom\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bfrom\\Project2\\Project2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\danny\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\bfrom\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
