@@ -107,7 +107,7 @@ namespace Project2.src.Engine.Simulation.World
             {
                 for (int y = 1; y < WORLD_HEIGHT - 1; y++)
                 {
-                    if (new Random().Next(0, 100) < 50)
+                    if (new Random().Next(0, 100) < 40)
                     {
                         map[x, y] = TerrainType.DIRT;
                     }
@@ -115,7 +115,7 @@ namespace Project2.src.Engine.Simulation.World
             }
 
             // Apply cellular automaton rules to smooth out the map
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 5; i++)
             {
                 TerrainType[,] newMap = new TerrainType[WORLD_WIDTH, WORLD_HEIGHT];
 
