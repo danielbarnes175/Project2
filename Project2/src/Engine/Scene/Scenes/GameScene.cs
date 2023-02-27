@@ -28,7 +28,9 @@ namespace Project2.src.Engine.Scene.Scenes
 
                 if (GlobalParameters.GlobalKeyboard.GetPress("BACKSPACE"))
                     GlobalParameters.CurrentScene = GlobalParameters.Scenes["Menu Scene"];
-            }
+                 if (GlobalParameters.GlobalKeyboard.GetPress("L"))
+                    GlobalParameters.CurrentScene = GlobalParameters.Scenes["Lobby Scene"];
+        }
 
             public override void Draw(Vector2 offset)
             {

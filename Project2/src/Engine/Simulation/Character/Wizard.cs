@@ -1,12 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
-using Project1.src.Engine;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Project2.src.UI;
 
 namespace Project2.src.Engine.Simulation.Character
 {
@@ -33,17 +26,13 @@ namespace Project2.src.Engine.Simulation.Character
         // Wizard myWizard = new Wizard(...);
         // We can pass in the specific initial values that the object holds. For this one, we decide that there's a position and dimensions.
         // base(...) is calling the constructor for the parent class, where we set the given parameters.
-        public Wizard(Vector2 position, Vector2 dimensions, int baseSpeed) : base("Assets/Game/wizard", position, dimensions)
+        public Wizard(Vector2 position, Vector2 dimensions) : base("Assets/Game/wizard", position, dimensions)
         {
             health = 100;
-            // Any variables listed above our constructor are called "instance variables" because they are specific to this instance of our object.
-            // For example, We can have many different Wizard in the world, and they all might hold different values for position within the world.
-            // So we create a separate instance of the Wizard class.
             baseSpeed = 1;
-            acceleration = 0;
+            acceleration = 1;
             currentMana = 0;
             maxMana = 100;
-            this.baseSpeed = baseSpeed;
         }
 
         /**
@@ -73,7 +62,9 @@ namespace Project2.src.Engine.Simulation.Character
             if (GlobalParameters.GlobalKeyboard.GetPress("D"))
             {
                 speed.X += acceleration;
+                
             }
+
             // Speed Cap
             if (speed.X > 15) speed.X = 15;
             if (speed.X < -15) speed.X = -15;
