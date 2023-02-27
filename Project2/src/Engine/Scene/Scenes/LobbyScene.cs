@@ -31,6 +31,7 @@ namespace Project2.src.Engine.Scene.Scenes
             {
                 // Setup Initial Game Variables
                 World world = GlobalParameters.Game.world;
+                world.createRequiredComponentsOnMap();
                 Vector2 spawnLocation = world.spawnLocation;
                 Vector2 screenPosition = world.getScreenPositionFromMapPosition(spawnLocation.X, spawnLocation.Y);
                 GameSettings.player.position = screenPosition;

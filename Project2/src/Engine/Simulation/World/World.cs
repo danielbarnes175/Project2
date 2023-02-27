@@ -83,7 +83,7 @@ namespace Project2.src.Engine.Simulation.World
             {
                 foreach (BaseTexture texture in textures)
                 {
-                    texture.Draw(Vector2.Zero);
+                    texture.Draw(Vector2.Zero, Vector2.Zero);
                 }
             }
             
@@ -151,38 +151,44 @@ namespace Project2.src.Engine.Simulation.World
                 }
 
                 map = newMap;
+            }
 
-
-                Texture2D dirtTexture = DrawingService.CreateTexture(GlobalParameters.GlobalGraphics, TILE_WIDTH, TILE_HEIGHT, pixel => Color.SandyBrown, Shapes.RECTANGLE);
-                Texture2D stoneTexture = DrawingService.CreateTexture(GlobalParameters.GlobalGraphics, TILE_WIDTH, TILE_HEIGHT, pixel => Color.DarkSlateGray, Shapes.RECTANGLE);
-
-                // Initialize the map with walls
-                for (int x = 0; x < WORLD_WIDTH; x++)
+            Texture2D dirtTexture = DrawingService.CreateTexture(GlobalParameters.GlobalGraphics, TILE_WIDTH, TILE_HEIGHT, pixel => Color.SandyBrown, Shapes.RECTANGLE);
+            Texture2D stoneTexture = DrawingService.CreateTexture(GlobalParameters.GlobalGraphics, TILE_WIDTH, TILE_HEIGHT, pixel => Color.DarkSlateGray, Shapes.RECTANGLE);
+            for (int x = 0; x < WORLD_WIDTH; x++)
+            {
+                for (int y = 0; y < WORLD_HEIGHT; y++)
                 {
-                    for (int y = 0; y < WORLD_HEIGHT; y++)
+                    Texture2D texture = null;
+                    switch (map[x, y])
                     {
-                        Texture2D texture = null;
-                        switch(map[x,y])
-                        {
-                            case TerrainType.DIRT:
-                                texture = dirtTexture;
-                                break;
-                            case TerrainType.WALL:
-                            case TerrainType.STONE:
-                                texture = stoneTexture;
-                                break;
-                            default:
-                                break; // TODO add missing texture?
-                        }
+                        case TerrainType.DIRT:
+                            texture = dirtTexture;
+                            break;
+                        case TerrainType.WALL:
+                        case TerrainType.STONE:
+                            texture = stoneTexture;
+                            break;
+                        default:
+                            break; // TODO add missing texture?
+                    }
 
-                        if (texture != null)
-                        {
-                            textures.Add(new BaseTexture(texture, getScreenPositionFromMapPosition(x, y), new Vector2(TILE_WIDTH, TILE_HEIGHT)));
-                        }
+                    if (texture != null)
+                    {
+                        textures.Add(new BaseTexture(texture, getScreenPositionFromMapPosition(x, y), new Vector2(TILE_WIDTH, TILE_HEIGHT)));
                     }
                 }
             }
 
+            if (GameSettings.player != null)
+            {
+                createRequiredComponentsOnMap();
+            }
+        }
+
+        // Helper function to create required components, like spawn and end locations
+        public void createRequiredComponentsOnMap()
+        {
             // Randomly select valid spots for the SPAWN and END locations
             bool spawnLocationValid = false;
             bool endLocationValid = false;
@@ -192,7 +198,16 @@ namespace Project2.src.Engine.Simulation.World
                 int spawnX = new Random().Next(1, WORLD_WIDTH - 1);
                 int spawnY = new Random().Next(1, WORLD_HEIGHT - 1);
 
-                if (map[spawnX, spawnY] == TerrainType.DIRT)
+                Vector2 screenPosition = getScreenPositionFromMapPosition(spawnX, spawnY);
+                GameSettings.player.position = screenPosition;
+                BaseCharacter player = GameSettings.player;
+
+                GlobalParameters.Game.GameCamera.SetCameraPosition(player.position);
+                GlobalParameters.Game.GameCamera.UpdateCamera(GlobalParameters.GlobalGraphics.Viewport);
+                
+                if (map[spawnX, spawnY] == TerrainType.DIRT &&
+                    player.canTextureMoveVertically(Vector2.Zero) &&
+                    player.canTextureMoveHorizontally(Vector2.Zero))
                 {
                     map[spawnX, spawnY] = TerrainType.SPAWN_LOCATION;
                     spawnLocation = new Vector2(spawnX, spawnY);
@@ -232,6 +247,7 @@ namespace Project2.src.Engine.Simulation.World
 
             switch (terrain)
             {
+                case TerrainType.SPAWN_LOCATION:
                 case TerrainType.DIRT:
                     isTraversable = true;
                     break;
