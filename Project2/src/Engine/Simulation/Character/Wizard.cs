@@ -1,5 +1,12 @@
 ﻿using Microsoft.Xna.Framework;
-using Project2.src.UI;
+using Microsoft.Xna.Framework.Input;
+using Project1.src.Engine;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Project2.src.Engine.Simulation.Character
 {
@@ -21,6 +28,7 @@ namespace Project2.src.Engine.Simulation.Character
         int maxMana;
         int acceleration;
         int baseSpeed;
+        public object fireball;
 
         // The constructor for our object. Whenever we want one of these, we can call code such as follows:
         // Wizard myWizard = new Wizard(...);
@@ -33,6 +41,8 @@ namespace Project2.src.Engine.Simulation.Character
             acceleration = 1;
             currentMana = 0;
             maxMana = 100;
+            // isTeleport = false;
+
         }
 
         /**
@@ -40,12 +50,18 @@ namespace Project2.src.Engine.Simulation.Character
          */
         public override void Update()
         {
-            // Regen the currentMana on every game update, but make sure that we're making sure it doesn't go above our max mana.
-            // Daniel's Code :^)
-            speed.X = speed.X > 0 ? speed.X - 1 : speed.X;
-            speed.X = speed.X < 0 ? speed.X + 1 : speed.X;
-            speed.Y = speed.Y > 0 ? speed.Y - 1 : speed.Y;
-            speed.Y = speed.Y < 0 ? speed.Y + 1 : speed.Y;
+
+
+            // fireball = LoadContent(Texture2D.FromFile(@"Game\fireball"));
+            // spriteBatch.Begin();
+            //fireball = Content.Load<Texture2D>(@"graphics\fireball");
+            //base.private object LoadContent<fireball>(fireball texture2D);
+            // throw new NotImplementedException();
+
+            speed.X = speed.X > 0 ? speed.X - (int)1.5 : speed.X;
+            speed.X = speed.X < 0 ? speed.X + (int)1.5 : speed.X;
+            speed.Y = speed.Y > 0 ? speed.Y - (int)1.5 : speed.Y;
+            speed.Y = speed.Y < 0 ? speed.Y + (int)1.5 : speed.Y;
 
             if (GlobalParameters.GlobalKeyboard.GetPress("W"))
             {
@@ -62,24 +78,25 @@ namespace Project2.src.Engine.Simulation.Character
             if (GlobalParameters.GlobalKeyboard.GetPress("D"))
             {
                 speed.X += acceleration;
-                
             }
-
             // Speed Cap
-            if (speed.X > 15) speed.X = 15;
-            if (speed.X < -15) speed.X = -15;
-            if (speed.Y > 15) speed.Y = 15;
-            if (speed.Y < -15) speed.Y = -15;
+            if (speed.X > 10) speed.X = 10;
+            if (speed.X < -10) speed.X = -10;
+            if (speed.Y > 10) speed.Y = 10;
+            if (speed.Y < -10) speed.Y = -10;
 
-            /* TODO:  Update the speed of this object based on input. See src/Engine/Simulation/Character/Warrior.cs as an example.
-             * 
-             ////* BONUS: Wizards have the ability to "blink" or teleport a short distance. Unfortunately, this uses their mana. Implement the ability to blink when pressing "SHIFT"
-             * Hint:  You will have to make multiple checks. Is the shift key pressed? Does the player have sufficient mana? If so, we can update the position directly here, but
-             *        make sure that we subtract the mana we've used!
-             */
-
-            // Call the Update function of the parent class, BaseCharacter.
             base.Update();
         }
+
+
+        /* TODO:  Update the speed of this object based on input. See src/Engine/Simulation/Character/Warrior.cs as an example.
+         * 
+         ////* BONUS: Wizards have the ability to "blink" or teleport a short distance. Unfortunately, this uses their mana. Implement the ability to blink when pressing "SHIFT"
+         * Hint:  You will have to make multiple checks. Is the shift key pressed? Does the player have sufficient mana? If so, we can update the position directly here, but
+         *        make sure that we subtract the mana we've used!
+         */
+
+        // Call the Update function of the parent class, BaseCharacter.
+
     }
 }

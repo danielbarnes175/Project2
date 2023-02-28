@@ -14,11 +14,14 @@ namespace Project2.src.Engine
         public World world;
         public Camera GameCamera;
 
+
         public GameManager()
         {
             world = new World(100, 100);
             GameCamera = new Camera(GlobalParameters.GlobalGraphics.Viewport);
         }
+
+
 
         public void Update()
         {
