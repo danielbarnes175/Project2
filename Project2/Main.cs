@@ -84,9 +84,21 @@ namespace Project2
             base.Update(gameTime);
         }
 
+        static void main(string[] args)
+        {
+            int totalSecondsPlayed = 100;
+            const int SecondsPerMintue = 60;
+
+            int minutes = totalSecondsPlayed / SecondsPerMintue;
+            int seconds = totalSecondsPlayed % SecondsPerMintue;
+            Console.WriteLine("Time Played: + minutes");
+
+            Console.WriteLine();
+        }
+
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.DarkGreen);
             GlobalParameters.GlobalSpriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, SamplerState.PointClamp, DepthStencilState.DepthRead, RasterizerState.CullCounterClockwise, null, GlobalParameters.Game.GameCamera.Transform);
 
             GlobalParameters.CurrentScene.Draw(Vector2.Zero);
