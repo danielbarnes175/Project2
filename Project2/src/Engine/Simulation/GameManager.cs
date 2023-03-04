@@ -16,7 +16,7 @@ namespace Project2.src.Engine
 
         public GameManager()
         {
-            world = new World(100, 100);
+            world = new World(150, 150);
             GameCamera = new Camera(GlobalParameters.GlobalGraphics.Viewport);
         }
 

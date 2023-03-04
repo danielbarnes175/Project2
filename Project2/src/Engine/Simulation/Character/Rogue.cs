@@ -33,6 +33,8 @@ namespace Project2.src.Engine.Simulation.Character
             // For example, We can have many different Rogues in the world, and they all might hold different values for position within the world.
             // So we create a separate instance of the Rogue class.
             isInvisible = false;
+
+            Audio audio = new Audio();
         }
 
         public override void Update()
