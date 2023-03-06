@@ -73,7 +73,7 @@ namespace Project2.src.UI
                 GlobalParameters.GlobalSpriteBatch.Draw(texture,
                     new Rectangle((int)(position.X + offset.X), (int)(position.Y + offset.Y), (int)dimensions.X,
                         (int)dimensions.Y), null, Color.White, rotation,
-                    new Vector2(texture.Bounds.Width / 2, texture.Bounds.Height / 2), new SpriteEffects(), 0.5f);
+                    new Vector2(texture.Bounds.Width / 2, texture.Bounds.Height / 2), new SpriteEffects(), 0.1f);
             }
         }
 
@@ -82,7 +82,7 @@ namespace Project2.src.UI
             GlobalParameters.GlobalSpriteBatch.Draw(texture,
                 new Rectangle((int)(position.X + offset.X), (int)(position.Y + offset.Y), (int)dimensions.X,
                     (int)dimensions.Y), null, Color.White, rotation, new Vector2(origin.X, origin.Y),
-                new SpriteEffects(), 0.1f);
+                new SpriteEffects(), 0.2f);
         }
     }
 }

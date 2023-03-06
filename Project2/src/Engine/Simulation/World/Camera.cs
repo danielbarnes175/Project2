@@ -49,8 +49,8 @@ namespace Project2.src.Engine.Simulation.World
         private void UpdateMatrix()
         {
             Transform = Matrix.CreateTranslation(new Vector3(-Position.X, -Position.Y, 0)) *
-                    Matrix.CreateScale(Zoom) *
-                    Matrix.CreateTranslation(new Vector3(Bounds.Width * 0.5f, Bounds.Height * 0.5f, 0));
+                        Matrix.CreateScale(Zoom) *
+                        Matrix.CreateTranslation(new Vector3(Bounds.Width * 0.5f, Bounds.Height * 0.5f, 0));
             UpdateVisibleArea();
         }
 
@@ -58,6 +58,11 @@ namespace Project2.src.Engine.Simulation.World
         {
             Vector2 newPosition = Position + movePosition;
             Position = newPosition;
+        }
+
+        public void SetCameraPosition(Vector2 cameraPosition)
+        {
+            Position = cameraPosition;
         }
 
         public void AdjustZoom(float zoomAmount)

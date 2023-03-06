@@ -14,5 +14,8 @@ namespace Project2.src.Engine.Simulation.World
         STONE = 3,
         WATER = 4,
         SNOW = 5,
+        SPAWN_LOCATION = 6,
+        END_LOCATION = 7,
+        WALL = 8,
     }
 }
