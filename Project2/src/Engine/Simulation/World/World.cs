@@ -148,7 +148,7 @@ namespace Project2.src.Engine.Simulation.World
                             newMap[x, y] = map[x, y];
                         }
                     }
-                }
+                } 
 
                 map = newMap;
             }
